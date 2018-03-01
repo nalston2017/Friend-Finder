@@ -12,5 +12,5 @@ app.get("/api/friends", function(req, res) {
 res.sendFile(path.join(__dirname, "../app/friends.js"));))
 });
 
-
+// Post routes /api/friends that will handle income survey results.
 }
