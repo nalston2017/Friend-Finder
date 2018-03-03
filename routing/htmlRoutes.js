@@ -8,9 +8,16 @@ var path = require("path");
 
 module.exports = function(app){
 // Get routes for survey and a route to home.html
+// GET request that displays survey page.
+res.sendFile(path.join(__dirname, "../public/survey.html"));
+});
 
+// Default is home
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../publichome.html"));
+});
 
-
-
-
-}
+// Error 404 routes
+app.get('*', function(req, res) {
+  return res.status(404).end();
+});
